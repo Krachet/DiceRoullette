@@ -29,7 +29,6 @@ public class RollDice : Singleton<RollDice>
         Invoke(nameof(GetTotalDice), 3f);
         if (sceneIndex == 0)
         {
-            //skillController.gameObject.SetActive(false);
             Invoke(nameof(CharacterMove), 3.1f);
         } 
         else if (sceneIndex == 1)
@@ -45,7 +44,14 @@ public class RollDice : Singleton<RollDice>
 
     public void ButtonFlipSwitch(bool flip)
     {
-        gameObject.SetActive(!flip);
+        if (sceneIndex == 0)
+        {
+            diceRoll.gameObject.SetActive(!flip);
+        }
+        else if (sceneIndex == 1)
+        {
+            gameObject.SetActive(!flip);
+        }
     }
 
     public int GetTotalDice()

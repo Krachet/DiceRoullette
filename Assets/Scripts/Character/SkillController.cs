@@ -44,5 +44,6 @@ public class SkillController : Singleton<SkillController>
     {
         yield return new WaitForSeconds(1);
         BattleSystem.Instance.ChangeTurn();
+        RollDice.Instance.ButtonFlipSwitch(false);
     }
 }

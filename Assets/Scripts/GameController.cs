@@ -63,6 +63,7 @@ public class GameController : Singleton<GameController>
         else if (moveIndex > DiceController.totalDice)
         {
             moveIndex = 1;
+            RollDice.Instance.ButtonFlipSwitch(false);
         }
     }
 
